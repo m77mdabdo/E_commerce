@@ -12,73 +12,54 @@
                 <form action="{{ route('storeProduct') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    {{-- Name of error --}}
-                    @error('name')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
-
                     {{-- Name --}}
                     <div class="mb-3">
-                        <label for="name" class="form-label">
-                            <i class="mdi mdi-tag-outline"></i> Name
-                        </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name">
+                        <label for="name" class="form-label"><i class="mdi mdi-tag-outline"></i> Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name" value="{{ old('name') }}">
+                        @error('name') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
-
-                    @error('desc')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
 
                     {{-- Description --}}
                     <div class="mb-3">
-                        <label for="description" class="form-label">
-                            <i class="mdi mdi-text"></i> Description
-                        </label>
-                        <textarea class="form-control" id="description" name="desc" rows="3" placeholder="Enter description"></textarea>
+                        <label for="description" class="form-label"><i class="mdi mdi-text"></i> Description</label>
+                        <textarea class="form-control" id="description" name="desc" rows="3" placeholder="Enter description">{{ old('desc') }}</textarea>
+                        @error('desc') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
-
-                    @error('image')
-                    <div class="text-danger mt-1">{{ $message }}</div>
-                    @enderror
 
                     {{-- Image --}}
                     <div class="mb-3">
-                        <label for="image" class="form-label">
-                            <i class="mdi mdi-image"></i> Image
-                        </label>
+                        <label for="image" class="form-label"><i class="mdi mdi-image"></i> Image</label>
                         <input type="file" class="form-control" id="image" name="image">
+                        @error('image') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
 
                     {{-- Price --}}
                     <div class="mb-3">
-                        <label for="price" class="form-label">
-                            <i class="mdi mdi-cash"></i> Price
-                        </label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" step="0.01">
+                        <label for="price" class="form-label"><i class="mdi mdi-cash"></i> Price</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" step="0.01" value="{{ old('price') }}">
+                        @error('price') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
 
                     {{-- Quantity --}}
                     <div class="mb-3">
-                        <label for="quantity" class="form-label">
-                            <i class="mdi mdi-cube"></i> Quantity
-                        </label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter quantity">
+                        <label for="quantity" class="form-label"><i class="mdi mdi-cube"></i> Quantity</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter quantity" value="{{ old('quantity') }}">
+                        @error('quantity') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
 
                     {{-- Category --}}
                     <div class="mb-3">
-                        <label for="category_id" class="form-label">
-                            <i class="mdi mdi-tag-outline"></i> Category
-                        </label>
+                        <label for="category_id" class="form-label"><i class="mdi mdi-tag-outline"></i> Category</label>
                         <select class="form-select" id="category_id" name="category_id">
-                            <option value="" disabled selected>Select a category</option>
+                            <option value="" disabled {{ old('category_id') ? '' : 'selected' }}>Select a category</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
                             @endforeach
                         </select>
+                        @error('category_id') <div class="text-danger mt-1">{{ $message }}</div> @enderror
                     </div>
-
-
 
                     {{-- Submit --}}
                     <button type="submit" class="btn btn-success w-100">
