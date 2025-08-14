@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamp('orderDate');
             $table->time('requireDate');
+            
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
