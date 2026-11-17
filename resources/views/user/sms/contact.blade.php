@@ -99,7 +99,7 @@
                         </li>
                     </ul>
 
-                    <!-- social icons وسط العمود -->
+                    <!-- Social icons centered in the column -->
                     <div class="d-flex justify-content-center mt-4">
                         <ul class="social-icons d-flex gap-3 list-unstyled">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>

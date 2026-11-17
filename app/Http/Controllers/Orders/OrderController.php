@@ -166,7 +166,7 @@ class OrderController extends Controller
 //         return redirect()->back()->with('error', 'Your cart is empty.');
 //     }
 
-//     // نخزن بيانات الأوردر مؤقتًا في السيشن
+//     // Store the order data temporarily in the session
 //     session()->put('checkout_data', [
 //         'requireDate' => $request->requireDate,
 //         'full_name' => $request->full_name,
@@ -177,7 +177,7 @@ class OrderController extends Controller
 //         "user_id" =>  Auth::user()->id,
 //     ]);
 
-//     // نروح لصفحة الدفع
+//     // Go to the payment page
 //     return redirect()->route('stripe.checkout');
 // }
 

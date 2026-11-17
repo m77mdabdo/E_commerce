@@ -19,7 +19,7 @@
                             </a>
 
                             <div class="card-body">
-                                {{-- زر المفضلة --}}
+                                {{-- Wishlist button --}}
                                 @auth
                                     <form action="{{ route('addToFav', $product->id) }}" method="POST" class="mb-2">
                                         @csrf
@@ -29,7 +29,7 @@
                                     </form>
                                 @endauth
 
-                                {{-- اسم المنتج --}}
+                                {{-- Product name --}}
                                 <h5 class="card-title">
                                     <a href="{{ route('showProductUser', $product->id) }}" class="text-dark">{{ $product->name }}</a>
                                 </h5>
@@ -38,7 +38,7 @@
                                 <p class="text-muted">{{ Str::limit($product->desc, 50) }}</p>
                                 <p><strong>Stock:</strong> {{ $product->quantity }}</p>
 
-                                {{-- زرار الإضافة للسلة --}}
+                                {{-- Add to cart button --}}
                                 @auth
                                     <form action="{{ route('addToCartUser', $product->id) }}" method="POST" class="mb-2">
                                         @csrf
@@ -47,13 +47,13 @@
                                     </form>
                                 @endauth
 
-                                {{-- زرار الإضافة لقائمة الأمنيات --}}
+                                {{-- Add to wishlist button --}}
                                 <form action="{{ route('addWishListUser', $product->id) }}" method="POST" class="mb-2">
                                     @csrf
                                     <button type="submit" class="btn btn-sm btn-outline-danger">Add to WishList</button>
                                 </form>
 
-                                {{-- عرض عدد الريفيوهات --}}
+                                {{-- Review count --}}
                                 <span>
                                     Reviews:
                                     <a href="{{ route('allReviews') }}" style="color:#ff0000;">
@@ -61,7 +61,7 @@
                                     </a>
                                 </span>
 
-                                {{-- آخر 3 ريفيوهات --}}
+                                {{-- Latest 3 reviews --}}
                                 @if ($product->reviews->count())
                                     <div class="mt-2 border-top pt-2">
                                         @foreach ($product->reviews->take(3) as $review)
@@ -87,7 +87,7 @@
     </div>
 </div>
 
-{{-- CSS النجوم --}}
+{{-- Star CSS --}}
 <style>
     .rating {
         direction: rtl;
@@ -102,6 +102,6 @@
     .rating input:checked ~ label i,
     .rating label:hover i,
     .rating label:hover ~ label i {
-        color: red; /* لون النجوم عند التحديد */
+        color: red; /* Star color when selected */
     }
 </style>

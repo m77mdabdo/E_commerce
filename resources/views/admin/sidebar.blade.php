@@ -133,7 +133,7 @@
             <div class="collapse" id="authMenu">
                 <ul class="nav flex-column sub-menu">
 
-                    {{-- لو المستخدم مش عامل تسجيل دخول --}}
+                    {{-- Guest (not logged in) --}}
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">
@@ -147,7 +147,7 @@
                         </li> --}}
 
 
-                    {{-- لو المستخدم عامل تسجيل دخول --}}
+                    {{-- Logged-in user --}}
                     @auth
                         <li class="nav-item">
                             <a class="nav-link" href="#"
@@ -167,7 +167,7 @@
 
 
 
-        {{-- لو المستخدم عامل تسجيل دخول --}}
+        {{-- Logged-in user --}}
         @auth
             <li class="nav-item menu-items">
                 <a class="nav-link" href="#"
