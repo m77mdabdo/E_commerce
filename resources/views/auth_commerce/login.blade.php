@@ -49,7 +49,7 @@
 
         .form-control {
             border-radius: 10px;
-            padding: 12px 40px; /* مساحة أكبر علشان الأيقونة */
+            padding: 12px 40px; /* Extra space for the icon */
         }
 
         .input-group-text {

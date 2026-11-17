@@ -5,10 +5,10 @@
     <h2>Review Details</h2>
     <div class="card">
         <div class="card-body">
-            {{-- اسم المستخدم --}}
+            {{-- User name --}}
             <h4>User: {{ $review->user->name }}</h4>
 
-            {{-- بيانات المنتج --}}
+            {{-- Product details --}}
             <h5>Product: {{ $review->product->name }}</h5>
             @if($review->product->image)
                 <img src="{{ asset('storage/' . $review->product->image) }}"
@@ -17,7 +17,7 @@
                      style="max-width: 200px; border-radius: 5px;">
             @endif
 
-            {{-- التقييم --}}
+            {{-- Rating --}}
             <p>
                 Rating: {{ $review->rating }} / 5
                 <br>
@@ -29,7 +29,7 @@
                 @endfor
             </p>
 
-            {{-- الكومنت --}}
+            {{-- Comment --}}
             <p>Comment: {{ $review->comment }}</p>
         </div>
     </div>

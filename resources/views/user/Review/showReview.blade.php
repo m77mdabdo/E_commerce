@@ -8,7 +8,7 @@
         <div class="card-body">
             <div class="row">
 
-                {{-- صورة المنتج --}}
+                {{-- Product image --}}
                 <div class="col-md-4">
                     @if($review->product->image ?? false)
                         <img src="{{ asset('storage/' . $review->product->image) }}"
@@ -21,7 +21,7 @@
                     @endif
                 </div>
 
-                {{-- بيانات المنتج والمراجعة --}}
+                {{-- Product and review details --}}
                 <div class="col-md-8">
                     <h4>{{ $review->product->name ?? 'Unknown Product' }}</h4>
                     <p>{{ $review->product->description ?? 'No description available.' }}</p>

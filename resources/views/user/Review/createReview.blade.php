@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    {{-- عرض تفاصيل المنتج --}}
+    {{-- Product details --}}
     <div class="card mb-4">
         <div class="card-body">
             <h3>{{ $product->name }}</h3>
@@ -15,16 +15,16 @@
         </div>
     </div>
 
-    {{-- عنوان --}}
+    {{-- Title --}}
     <h2>Add Review for {{ $product->name }}</h2>
 
-    {{-- الفورم --}}
+    {{-- Form --}}
     <form action="{{ route('storeReview') }}" method="POST">
         @csrf
         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
         <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-        {{-- اختيار النجوم --}}
+        {{-- Star picker --}}
         <div class="mb-3">
             <label class="form-label">Rating</label>
             <div class="star-rating">
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        {{-- التعليق --}}
+        {{-- Comment --}}
         <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
             <textarea name="comment" id="comment" rows="4" class="form-control" required></textarea>
@@ -45,7 +45,7 @@
     </form>
 </div>
 
-{{-- CSS للنجوم الحمراء --}}
+{{-- CSS for the red stars --}}
 <style>
 .star-rating {
     direction: rtl;

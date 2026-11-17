@@ -41,7 +41,7 @@ class AuthController extends Controller
 
         $user = User::create($data);
 
-        // تسجيل الدخول مباشرة بعد التسجيل
+        // Log the user in right after registration
         Auth::login($user);
 
         return redirect()->route('home')->with('success', "Welcome {$user->name}");

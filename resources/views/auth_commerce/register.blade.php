@@ -33,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* خليتها افتح */
+            /* Lighter shade */
             background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
@@ -42,7 +42,7 @@
             position: relative;
             z-index: 2;
             background: rgba(255, 255, 255, 0.93);
-            /* برضو فتحته شوية */
+            /* Also slightly lighter */
             padding: 40px 30px;
             border-radius: 15px;
             margin-top: 80px;
@@ -130,7 +130,7 @@
             </div>
             <h3 class="text-center mb-4">Create Your Account</h3>
 
-            {{-- عرض الأخطاء --}}
+            {{-- Validation errors --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="mb-0">
