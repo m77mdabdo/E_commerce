@@ -37,7 +37,7 @@
                         </span>
 
 
-                        {{-- عرض آخر الريفيوهات --}}
+                        {{-- Latest reviews list --}}
                         @if ($product->reviews->count())
                             <div class="mt-2">
                                 @foreach ($product->reviews as $review)
@@ -56,7 +56,7 @@
                         @endif
 
                         @auth
-                            {{-- عرض النجوم --}}
+                            {{-- Stars --}}
                             <div class="rating mb-2">
                                 @for ($i = 5; $i >= 1; $i--)
                                     <input type="radio" id="star{{ $i }}-{{ $product->id }}" name="rating"
@@ -69,7 +69,7 @@
                             </div>
                             <br>
 
-                            {{-- زرار الكومنت --}}
+                            {{-- Comment button --}}
                             <a href="{{ route('createReview', $product->id) }}" class="btn filled-button"
                                 style="background-color:#ff0000; border:none;">
                                 Add Comment

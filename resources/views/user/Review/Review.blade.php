@@ -8,7 +8,7 @@
         <div class="card mb-4">
             <div class="card-body">
 
-                {{-- بيانات المنتج --}}
+                {{-- Product details --}}
                 <div class="row">
                     <div class="col-md-3">
                         @if($review->product->image ?? false)
@@ -27,7 +27,7 @@
                         <p>{{ $review->product->description ?? 'No description available.' }}</p>
                         <p><strong>Price:</strong> ${{ $review->product->price ?? 'N/A' }}</p>
 
-                        {{-- بيانات المراجعة --}}
+                        {{-- Review details --}}
                         <p class="mb-1">
                             <strong>Reviewed by:</strong> {{ $review->user->name ?? 'Guest' }}
                         </p>
@@ -43,7 +43,7 @@
                             ({{ $review->created_at->diffForHumans() }})
                         </small>
 
-                        {{-- زر عرض الريفيو --}}
+                        {{-- View review button --}}
                         <div class="mt-2">
                             <a href="{{ route('showReview', $review->id) }}" class="btn btn-sm btn-primary">
                                 View Review
@@ -56,7 +56,7 @@
         </div>
     @endforeach
 
-    {{-- روابط الصفحات --}}
+    {{-- Pagination links --}}
     {{ $reviews->links() }}
 </div>
 @endsection

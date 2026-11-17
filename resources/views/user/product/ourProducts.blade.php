@@ -77,7 +77,7 @@
                                                 </a>
                                             </span>
 
-                                            {{-- آخر الريفيوهات --}}
+                                            {{-- Latest reviews --}}
                                             @if ($product->reviews->count())
                                                 <div class="mt-2 border-top pt-2">
                                                     @foreach ($product->reviews as $review)
@@ -95,7 +95,7 @@
                                             @endif
 
                                             @auth
-                                                {{-- عرض النجوم --}}
+                                                {{-- Stars --}}
                                                 <div class="rating mb-2 mt-2">
                                                     @for ($i = 5; $i >= 1; $i--)
                                                         <input type="radio" id="star{{ $i }}-{{ $product->id }}"

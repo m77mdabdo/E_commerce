@@ -137,7 +137,7 @@ class ApiAuthController extends Controller
 //         ], 401); // Unauthorized
 //     }
 
-//     // ابحث عن المستخدم الذي يمتلك هذا التوكن
+//     // Find the user who owns this token
 //     $user = User::where('access_token', $accessToken)->first();
 
 //     if (!$user) {
@@ -146,7 +146,7 @@ class ApiAuthController extends Controller
 //         ], 401); // Unauthorized
 //     }
 
-//     // حذف التوكن وتسجيل الخروج
+//     // Delete the token and log out
 //     $user->update([
 //         'access_token' => null
 //     ]);
