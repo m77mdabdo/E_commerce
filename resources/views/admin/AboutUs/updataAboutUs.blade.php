@@ -9,7 +9,7 @@
         <div class="card-body">
             <form action="{{ route('updateAboutUs', $aboutUs->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT') {{-- أو PATCH --}}
+                @method('PUT') {{-- or PATCH --}}
 
                 <div class="mb-3">
                     <label for="name" class="form-label"><strong>Name</strong></label>

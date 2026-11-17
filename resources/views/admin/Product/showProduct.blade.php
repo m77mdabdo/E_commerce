@@ -5,7 +5,7 @@
         <alert class="alert success">{{ session()->get('success') }}</alert> <br>
     @endif
 
-    {{-- بيانات الكاتيجوري --}}
+    {{-- Category details --}}
     <strong>Category Name:</strong>
     <p>
         <a href="{{ route('showCategory', $product->category->id) }}">
@@ -13,7 +13,7 @@
         </a>
     </p>
 
-    {{-- بيانات المنتج --}}
+    {{-- Product details --}}
     <p><strong>Name:</strong> {{ $product->name }}</p>
     <p><strong>Description:</strong> {{ $product->desc }}</p>
 
@@ -43,7 +43,7 @@
 
     <hr>
 
-    {{-- عرض الريفيوهات --}}
+    {{-- Reviews --}}
     <h3>Product Reviews ({{ $product->reviews->count() }})</h3>
     @if ($product->reviews->count())
         @foreach ($product->reviews as $review)

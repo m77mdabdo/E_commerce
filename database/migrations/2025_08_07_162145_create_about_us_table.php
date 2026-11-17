@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
              $table->string('name');
             $table->text('description')->nullable();
-            $table->string('image')->nullable(); // مسار الصورة
+            $table->string('image')->nullable(); // Image path
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('whatsapp')->nullable();

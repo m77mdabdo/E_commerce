@@ -30,7 +30,7 @@ class ApiAuth
             ], 401);
         }
 
-        // يمكنك تمرير المستخدم لو أردت:
+        // You can pass the user along if needed:
         // $request->merge(['auth_user' => $user]);
 
         return $next($request);
